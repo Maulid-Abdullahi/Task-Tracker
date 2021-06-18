@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from '../../Task';
 import { ToastrService } from 'ngx-toastr';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 
 export enum ToasterPosition {
   topRight = 'toast-top-right',
@@ -20,14 +22,20 @@ export class AddTaskComponent implements OnInit {
   text: string = '';
   day: string = '';
   reminder: boolean = false;
+  showAddTask: boolean = false;
+  subscription: Subscription;
 
-  constructor(private toastr: ToastrService) {}
+  constructor(private toastr: ToastrService, private uiService: UiService) {
+      this.subscription = this.uiService
+      .onToggle()
+      .subscribe((value) => (this.showAddTask = value));
+  }
 
   ngOnInit(): void {}
 
   onSubmit() {
-    if (!this.text) {
-      this.toastr.error('Error', 'please add a task');
+    if (!this.text || !this.day) {
+      this.toastr.error('', 'please add a task');
       return;
     }
 
@@ -38,6 +46,7 @@ export class AddTaskComponent implements OnInit {
     };
 
     this.onAddTask.emit(newTask);
+    this.toastr.success('', 'Successfully added  task');
 
     //clear inputs after submition
     this.text = '';

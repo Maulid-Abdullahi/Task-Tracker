@@ -1,7 +1,6 @@
-<button
-  [ngStyle]="{ 'background-color': color }"
-  class="btn"
-  (click)="onClick()"
->
+<button [ngStyle]="{ 'background-color': color }" class="btn" (click)="onClick()">
   {{ text }}
+</button>
+<button  [ngStyle]="{ 'background-color': editcolor }" class="btn" (click)="onEdit()">
+  {{ edit }}
 </button>

@@ -7,9 +7,13 @@ import { Component, OnInit, Input,Output, EventEmitter } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
-@Input() color: string|undefined;
-@Input() text: string|undefined;
+@Input() color: string = '';
+@Input() text: string = '';
+@Input() edit: string ='';
+@Input() editcolor: string ='';
+
 @Output() btnClick = new EventEmitter();
+@Output() EditBtn = new EventEmitter();
 
   constructor() {}
 
@@ -18,6 +22,11 @@ export class ButtonComponent implements OnInit {
   onClick(){
     this.btnClick.emit();
   }
+
+  onEdit(){
+    this.EditBtn.emit();
+  }
+  
   
 
 }
