@@ -11,13 +11,12 @@
         [ngStyle]="{ color: 'red', margin: '20px' }"
         [icon]="faTimes"
       ></fa-icon>
-    
-      <fa-icon
-        (click)="editTask()"
-        [ngStyle]="{ color: 'blue' }"
-        [icon]="faEdit"
-      ></fa-icon>
+
+      <button (click)="editTask(task)" [ngStyle]="{ color: 'blue' }">
+        Edit
+      </button>
     </div>
   </h3>
   <p>{{ task?.day }}</p>
+  <p>{{ task?.id }}</p>
 </div>

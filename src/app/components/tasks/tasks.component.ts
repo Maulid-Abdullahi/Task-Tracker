@@ -16,6 +16,8 @@ export class TasksComponent implements OnInit {
     this.taskService
       .getTasks()
       .subscribe((servicetasks) => (this.tasks = servicetasks));
+
+      console.log('this.tasks',this.tasks)
   }
 
   deleteTask(task: Task) {

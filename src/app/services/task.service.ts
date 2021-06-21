@@ -35,7 +35,8 @@ export class TaskService {
     return this.http.post<Task>(this.apiUrl, task, httpOptions);
   }
 
-  public getTask(id: any) {
-  return console.log(' this.getTasks();', this.getTasks())
+  getTaskById(task: any): Observable<Task> {
+    const url = `${this.apiUrl}/${task}`;
+    return this.http.get<Task>(url);
   }
 }
