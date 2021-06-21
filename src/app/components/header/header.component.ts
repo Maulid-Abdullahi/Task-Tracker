@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { Task } from '../../Task';
+import { TaskService } from '../../services/task.service';
 
 @Component({
   selector: 'app-header',
@@ -25,9 +27,7 @@ export class HeaderComponent implements OnInit {
   toggleAddTask() {
     this.uiService.toggleAddTask();
   }
-  editTask(){
-    this.router.navigate(["/edit"]);
-  }
+ 
 
   hasRoute(route: string){
     return this.router.url === route;

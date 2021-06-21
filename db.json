@@ -17,6 +17,12 @@
       "day": "7th July",
       "reminder": false,
       "id": 4
+    },
+    {
+      "text": "Go Home",
+      "day": "9/6/2020",
+      "reminder": false,
+      "id": 5
     }
   ]
 }

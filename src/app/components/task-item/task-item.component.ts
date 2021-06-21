@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../../Task';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-item',
@@ -12,8 +13,9 @@ export class TaskItemComponent implements OnInit {
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter();
   @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter();
   faTimes = faTimes;
+  faEdit = faEdit;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -23,5 +25,8 @@ export class TaskItemComponent implements OnInit {
 
   onToggle(task: any) {
     this.onToggleReminder.emit(task);
+  }
+  editTask(){
+    this.router.navigate(["/edit"]);
   }
 }

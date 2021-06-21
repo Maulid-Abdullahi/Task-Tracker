@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-edit-task',
@@ -9,8 +10,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class EditTaskComponent implements OnInit {
   EditTask: any;
 
-  constructor(private fb: FormBuilder) {}
-
+  constructor(private fb: FormBuilder, private taskservice: TaskService) {}
   ngOnInit(): void {
     this.EditTask = this.fb.group({
       text: ['', Validators.required],
