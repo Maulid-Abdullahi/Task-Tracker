@@ -1,20 +1,42 @@
-<form [formGroup]="EditTask">
-  <div class="form-group">
+<form [formGroup]="EditTask" class="form-inline" (ngSubmit)="onEditSubmit($event)">
+  <div class="form-group form-inline">
     <label for="text">Task</label>
-    <input type="text" class="form-control" id="text" placeholder="Add Task" formControlName="text">
+    <input
+      type="text"
+      class="form-control"
+      id="text"
+      name="text"
+      [(ngModel)]="text"
+      placeholder="Add Task"
+      formControlName="text"
+    />
   </div>
-  <div class="form-group">
+  <div class="form-group form-inline">
     <label for="day">Day & Time</label>
-    <textarea class="form-control" id="day" placeholder="Add a Day & Time"
-      formControlName="day"></textarea>
+    <textarea
+      class="form-control"
+      id="day"
+      name="day"
+      [(ngModel)]="day"
+      placeholder="Add a Day & Time"
+      formControlName="day"
+    ></textarea>
   </div>
-  <div class="form-group">
-    <label for="reminder">Set Reminder</label>
-    <input class="form-control" type="checkbox" name="reminder"  id="reminder" formControlName="reminder"/>
-    
+  <div class=" form-inline">
+    <label for="reminder"
+    class="form-inline form-group"
+      >Set Reminder
+      <input
+        class="form-control  "
+        type="checkbox"
+        name="reminder"
+        id="reminder"
+        [(ngModel)]="reminder"
+        formControlName="reminder"
+      />
+    </label>
   </div>
 
-  <button class="btn btn-primary float-right" >Save</button>
+  <button class="btn btn-primary float-right">Submit</button>
   <a routerLink="/">Go Back</a>
-
 </form>

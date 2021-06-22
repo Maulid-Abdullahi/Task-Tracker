@@ -23,6 +23,24 @@
       "day": "9/6/2020",
       "reminder": false,
       "id": 5
+    },
+    {
+      "text": "Doctors Appointmentss",
+      "day": "May 5th at 2:90pm",
+      "reminder": false,
+      "id": 6
+    },
+    {
+      "text": "Dentist Appointment",
+      "day": "May 8th at 2:40pm",
+      "reminder": false,
+      "id": 7
+    },
+    {
+      "text": "Dentist Appointment",
+      "day": "May 8th at 2:40pm",
+      "reminder": true,
+      "id": 8
     }
   ]
 }
